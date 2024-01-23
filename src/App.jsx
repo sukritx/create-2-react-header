@@ -4,13 +4,18 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [title, setTitle] = useState("I love number")
+
+  function updateTitle() {
+    setTitle("I love number " + Math.random())
+  }
 
   return (
-    <div>
-      <Header title="My name is Sukrit" />
-      <Header title="I love to eat sushi" />
-    </div>
+    <>
+    <button onClick={updateTitle}>Update title</button>
+      <Header title="My name is Sukrit"></Header>
+      <Header title={title}></Header>
+    </>
   )
 }
 
